@@ -1,0 +1,23 @@
+
+<style>
+  .bt{
+    margin-left: 60%;
+  }
+
+
+  </style>
+  <div class="login-box">
+    <h3 class="mb-6 pb-2 pb-md-0 mb-md-4">Delete Student</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="user-box">
+        <input type="text"  [(ngModel)]= "student.id" name="id"  required>
+
+        <label>Server_ID</label>
+      </div>
+      <div class="btn">
+      <input class="btn btn-dark"   type="submit" value="delete">&nbsp;&nbsp;&nbsp;
+      <input class="btn btn-dark"  type="reset" value="cancel">
+    </div>
+    </form>
+  </div>
+

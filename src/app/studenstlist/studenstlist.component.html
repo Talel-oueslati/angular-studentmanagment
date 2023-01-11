@@ -1,0 +1,60 @@
+<style>
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgb(216, 216, 216);
+  }
+
+
+.select-style{
+  border-radius: 5px;
+}
+
+  </style>
+<br>
+
+<div>
+
+  <input style="margin-left:90px;margin-bottom:100px;" placeholder="Search..." name="Search" #myInput type="text" class="form-control" [(ngModel)]= "firstname" id="firstname" (input)= "Search();" />
+<img src="../../assets/img/printer.png"  width="40px" alt="save" style="margin-left:-2px;margin-top: -270px;" onclick="window.print()">
+</div>
+<table class="table table-stiped" style="margin-top: -100px;margin-left: -5%;">
+    <thead>
+        <tr>
+          <th style="color:#0e0d2b;"></th>
+          <th><a (click)="sort('id')" style="color:#0e0d2b;">&nbsp;<i class="fa fa-sort"></i>Id</a></th>
+            <th><a (click)="sort('firstname')"  style="color:#0e0d2b;">firstname</a></th>
+            <th><a (click)="sort('lastname')"  style="color:#0e0d2b;">lastname</a></th>
+            <th><a (click)="sort('email')"  style="color:#0e0d2b;">email</a></th>
+            <th><a (click)="sort('department')" style="color:#0e0d2b;">Department</a></th>
+            <th><a (click)="sort('cin')"  style="color:#0e0d2b;">cin</a></th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+   <tbody>
+       <tr *ngFor ="let students of student " >
+        <td >
+          <button  (click)= "updatestudent(students.id)"  type="submit"  class="button" style="vertical-align:middle"><span>Update</span></button>
+        </td>
+            <td id="id">{{students.id}}</td>
+            <td id="firstname">{{students.firstname}}</td>
+            <td id="lastname">{{students.lastname}}</td>
+            <td id="department">{{students.department}}</td>
+            <td id="email">{{students.email}}</td>
+            <td id="cin">{{students.cin}}</td>
+
+            </tr>
+
+
+    </tbody>
+
+</table>
